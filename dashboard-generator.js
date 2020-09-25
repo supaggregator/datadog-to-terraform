@@ -107,7 +107,10 @@ function constructWidgetDefinition(definition) {
       result += convertArrayOfObjects(key, value);
     } else if (key === "yaxis") {
       result += convertMapping(key, value);
-    } else {
+    } else if (key === "conditional_formats") {
+      result += convertMapping(key, value);
+    }
+    else {
       result += assignmentString(key, value);
     }
   });
